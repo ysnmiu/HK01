@@ -1,0 +1,15 @@
+{
+  "/Survey":{
+    "target":"http://localhost:3000/",
+    "secure":false,
+    "changeOrigin": true
+
+  },
+  "/Response":{
+    "target":"http://localhost:3000/",
+    "secure":false,
+    "changeOrigin": true
+
+  }
+  }
+

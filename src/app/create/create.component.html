@@ -1,0 +1,47 @@
+<div class="Create">
+
+    <form #surveyForm="ngForm" (ngSubmit)="add(surveyForm.value)" class="createform">
+        <h1 class="Lh1">{{editMode?'Edit Survey':'Create Survey'}}</h1>
+        <p>*Login function not yet created, this part will only be shown after login*</p>
+        <div class="mb-3">
+            <label class="form-label">Survey Name</label>
+            <input type="text"  class="form-control" name="sName" ngModel>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Author</label>
+            <input type="text" class="form-control" name="author" ngModel placeholder="will be username">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Question 1</label>
+          <input type="text" class="form-control" name="question1" ngModel placeholder="will be Question 1">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Question 2</label>
+        <input type="text" class="form-control" name="question2" ngModel placeholder="will be Question 2">
+    </div>
+    <div class="bcenter">
+    <div class="btns">
+      <input type="submit" class="btn btn1" value="{{editMode?'Update Survey':'Add Survey'}}">
+  </div></div>
+    </form>
+</div>
+
+<div class="surveylist">
+    <h1 class="surh1">Survey List</h1>
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th colspan="2">Action</th>
+      </tr>
+
+      <tr *ngFor="let survey  of surveys">
+        <td>{{survey.name}}</td>
+        <td>{{survey.author}}</td>
+        <td><div class="btns"><button type="button" class="btn btn1" (click)="onEditClicked(survey._id)">Update</button></div></td>
+        <td><div class="btns"><button type="button" class="btn btn1"  (click)="onDeleteClicked(survey._id)">Delete</button></div></td>
+      </tr>
+    </table>
+
+</div>

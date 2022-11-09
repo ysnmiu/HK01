@@ -1,1 +1,242 @@
 /* You can add global styles to this file, and also import other style files */
+/*color scheme:
+ #F2DFEF 
+ #52D9CB
+ #B6F2EC
+ #01261C
+ #41D9AE
+
+ */
+
+ h1, h2, h3, h4, h5, li{
+   color: #01261C;
+   font-family: 'poppins';
+}
+body{
+   margin: 5vh 5vw;
+   background-color:  #f1f1f1;
+}
+.header-bar{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: white;
+   padding-top:20px;
+   padding-bottom:20px;
+   padding-left:100px;
+   padding-right:100px;
+   margin-top: -40px;
+   margin-left:-75px;
+   margin-right: -75px;
+   font-family: 'poppins';
+   
+}
+.header-bar a{
+  color:#2c605e;
+}
+.header-bar a:hover{
+  border-bottom: #01261C 2px solid;
+}
+.navbar-toggler-icon{
+   border-radius: 5px;
+}
+.dropdown-item a{
+   color: #01261C;
+}
+.icon{
+   width: 125px;
+   border-radius: 10px;
+   margin-right: 10px;
+}
+.homepage{
+   display: flex;
+   height: 80vh;
+   
+}
+.home1{
+   width: 50%;
+   text-align: center;
+   padding: 10% 10%;
+   align-items: center;
+   background-color: #f1f1f1;
+}
+.home1 h1{
+   font-size: 4rem;
+   font-family: 'poppins';
+   margin-bottom: 25px;
+   color:#2c605e;
+   text-align: center;
+}
+
+.button {
+  border:2px solid #01261C;
+  color: #01261C;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:-280px;
+  cursor: pointer;
+}
+
+.home2{
+   background-image: url("../src/assets/icon.png");
+   background-repeat: no-repeat;
+   background-size:120%;
+   background-position: 50%;
+   width: 50%;
+}
+.loginform, .signupform, .createform{
+   width: 30%;
+   min-width: 300px;
+   margin:auto;
+   padding-top:50px;
+   padding-bottom:50px;
+   font-family: 'poppins';
+}
+
+.Lh1{
+   text-align: center;
+  }
+
+.form-text{
+   text-align: center;
+}
+
+.bcenter{
+   text-align: center;
+}
+
+.footer-links{
+  border-top: 3px solid #2c605e;
+  display: flex;
+  font-family: 'poppins';
+}
+.footer-links li{
+  margin-left: 20px;
+  list-style: none;
+  padding-top: 20px;
+}
+.testingblock{
+  min-height: 50vh;
+}
+
+table, th, td {
+  border: 1px solid #01261C;
+  padding-left:10px;
+  font-family: 'poppins';
+  margin-bottom: 3%;
+  margin-left: 3%;
+  margin-top: 1%;
+}
+
+th{
+  min-width: 420px;
+  font-size: large;
+  background-color: #01261C;
+  color:white;
+}
+
+.btn-warning{
+  background-color: #F2DfEF;
+  color:#01261C;
+  border-color: #01261C;
+}
+.btn-success{
+  background-color:#52D9CB;
+  color:#01261C;
+  border-color: #01261C;
+}
+
+.aboutme {
+  background:#01261C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:50px;
+
+}
+
+.text {
+   font-size: 20px;
+   padding-left: 30px;
+   padding-right:30px;
+   font-family: 'poppins';
+   color:white;
+ }
+
+ //about
+.about_section{
+   width: 100%;
+   height: auto;
+   background-color: #01261C;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 50px 13%;
+   font-family: poppins;
+}
+.about_img img{
+   width: 280px;
+
+}
+.about_details h1{
+   font-size: 58px;
+   color: #fff;
+   position: relative;
+}
+.about_details h1::after{
+   content: " ";
+   position: absolute;
+   width: 120px;
+   height: 4px;
+   background-color:#52D9CB;
+   border-radius: 5px;
+   left: 0;
+   bottom: 2px;
+}
+.about_details p{
+   font-size: 15px;
+   color: #fff;
+   max-width: 480px;
+   margin: 30px 0 45px 0;
+   line-height: 29px;
+}
+.btn{
+   padding: 10px 25px;
+   border: 2px solid #52D9CB;
+   border-radius: 5px;
+   text-decoration: none;
+   margin: 30px 0;
+   transition: all .5s ease;
+   font-weight: 600;
+}
+.btn:hover{
+   background-color: #52D9CB;
+   color: #333;
+}
+.btn1{
+   margin-right: 15px;
+   background-color:#52D9CB;
+   color: white;
+}
+.btn1:hover{
+   background-color: transparent;
+   color: #52D9CB;
+}
+.btn2{
+   margin-right: 15px;
+   background-color:#52D9CB;
+   color: white;
+}
+.btn2:hover{
+   background-color: transparent;
+   color: #52D9CB;
+}
+
+//sur
+.surh1{
+ padding-left: 43px;
+ padding-top:10px;
+}

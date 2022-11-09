@@ -1,0 +1,25 @@
+
+<div class="surveylist">
+  <h1 class="surh1">Survey</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Response</th>
+      </tr>
+
+      <tr *ngFor="let survey  of surveys">
+        <td>{{survey.name}}</td>
+        <td>{{survey.author}}</td>
+
+        <td>
+          <div class="btns">
+            <a (click)="response(survey._id)" class="btn btn1">Response</a>
+          </div></td>
+        <router-outlet></router-outlet>
+
+      </tr>
+    </table>
+
+</div>
+
