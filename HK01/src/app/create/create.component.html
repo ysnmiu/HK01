@@ -1,0 +1,94 @@
+<div class="Create">
+
+  <form [formGroup]="surveyForm" (ngSubmit)="add()" class="createform">
+        <h1 class="Lh1">{{editMode?'Edit Survey':'Create Survey'}}</h1>
+        
+    <div class="form-group" [hidden]="true">
+      <label>id</label>
+      <input formControlName="_id" type="text" class="form-contol" >
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input formControlName="name" type="text" required name="name" class="form-contol" >
+    </div>
+    <div class="form-group">
+      <label>Author</label>
+      <input formControlName="author" type="text" required name="author" class="form-contol" >
+    </div>
+
+    <!-- ------------------------Question------Start---------------------------------------------------------------------------------------- -->
+    <div class="form-group">
+      <label>Question</label>
+      <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addItem()">Add</button>
+      <div formArrayName="questions" >
+      <div *ngFor="let question of questions.controls;let i=index;" [formGroupName]="i">
+        <label>Question {{i+1}}</label><br>
+        <input  type="text" class="form-contol my-1"  name="question" formControlName="question">
+        <button type="button" class="btn btn-secondary btn-sm m-2" (click)="onDeleteItem(i)">Delete</button>
+        <label *ngIf="typeArray[i]">Question </label><br>
+
+        <div *ngIf="typeArray[i]" class="MCQ">
+          <label class="form-label"></label>
+          <input type="text" class="form-control" name="MCAns-{{i}}-1" placeholder="Option 1" formControlName="option1">
+          <label class="form-label"></label>
+          <input type="text" class="form-control" name="MCAns-{{i}}-2" placeholder="Option 2" formControlName="option2">
+          <label class="form-label"></label>
+          <input type="text" class="form-control" name="MCAns-{{i}}-3" placeholder="Option 3" formControlName="option3">
+          <label class="form-label"></label>
+          <input type="text" class="form-control" name="MCAns-{{i}}-4" placeholder="Option 4" formControlName="option4"><br>
+          </div>
+
+
+        <button type="button" class="btn btn-secondary btn-sm m-2" (click)="SQ(i)">SQ</button>
+        <button type="button" class="btn btn-secondary btn-sm m-2" (click)="MC(i)">MC</button>
+        <div class="form-group" [hidden]="false">
+          <label hidden>Type</label>
+          <input  formControlName="type" type="text" class="form-contol" >
+        </div>
+
+
+
+
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+
+       <!-- ------------------------Question--------End--------------------------------------------------------------------------------------- -->
+    <div class="bcenter">
+    <div class="btns">
+      <input type="submit" class="btn btn1" value="{{editMode?'Update Survey':'Add Survey'}}">
+      <!-- <button type="button" class="btn btn1"  (click)="updateTask(this.currentId)">Update</button> -->
+      <button type="button" class="btn btn1"  (click)="cancel()">Cancel</button>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+
+<div class="surveylist">
+    <h1 class="surh1">Survey List</h1>
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th colspan="2">Action</th>
+      </tr>
+
+      <tr *ngFor="let survey  of surveys">
+        <td>{{survey.name}}</td>
+        <td>{{survey.author}}</td>
+        <td><div class="btns"><button type="button" class="btn btn1" (click)="onEditClicked(survey._id)">Edit</button></div></td>
+        <td><div class="btns"><button type="button" class="btn btn1"  (click)="onDeleteClicked(survey._id)">Delete</button></div></td>
+      </tr>
+    </table>
+
+</div>
+
+

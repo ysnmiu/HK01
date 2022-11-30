@@ -1,0 +1,135 @@
+<div class="Response">
+
+  <h1 class="Lh1">{{surveyName}}</h1>
+
+  <form [formGroup]="responseForm" (ngSubmit)="submit()" class="responseform">
+    <div class="form-group" [hidden]="true">
+      <label>id</label>
+      <input formControlName="_id" type="text" class="form-contol" >
+    </div>
+
+    <div class="form-group" [hidden]="true">
+      <label>Ref Id</label>
+      <input formControlName="refId" type="text" required name="refId" class="form-contol" value={{refId}} >
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+
+      <div formArrayName="responses" >
+      <div *ngFor="let question of questions.controls;let z=index;" [formGroupName]="z">
+        <label>Question {{z+1}}</label><br>
+        <label>{{questionArray[z]}}</label><br>
+        <input *ngIf="!typeArray[z]" type="text" class="form-contol my-1" name="question" formControlName="response">
+
+        <div  *ngIf="typeArray[z]" class="MCQ">
+          <label class="form-label">A {{option1Array[z]}}</label> &nbsp;
+          <input type="radio" name="option" placeholder="Option 1" formControlName="option" value="a">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-label">B {{option2Array[z]}}</label> &nbsp;
+          <input type="radio" name="option" placeholder="Option 2" formControlName="option" value="b"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-label">C {{option3Array[z]}}</label> &nbsp;
+          <input type="radio" name="option" placeholder="Option 3" formControlName="option" value="c"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-label">D {{option4Array[z]}}</label> &nbsp;
+          <input type="radio" name="option" placeholder="Option 4" formControlName="option" value="d"><br>
+          </div>
+
+          <div class="form-group" [hidden]="false">
+            <label>Type</label>
+            <input formControlName="type" type="text" class="form-contol" >
+          </div>
+
+      </div>
+      </div>
+    </div>
+    <div class="bcenter">
+      <div class="btns">
+        <input type="submit" class="btn btn1" value="Submit">
+        <!-- <button type="button" class="btn btn1"  (click)="updateTask(this.currentId)">Update</button> -->
+        <button type="button" class="btn btn1"  (click)="cancel()">Cancel</button>
+
+      </div>
+      </div>
+
+
+  </form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<form #responseForm="ngForm" (ngSubmit)="submit(responseForm.value)" class="createform">
+  <h1 class="Lh1">{{surveyName}}</h1>
+
+
+  <div class="mb-3">
+    <label class="form-label">{{question1}}</label>
+    <input type="text" class="form-control" name="question1" ngModel placeholder="Please answer Question 1">
+</div>
+<div class="mb-3">
+  <label class="form-label">{{question2}}</label>
+  <input type="text" class="form-control" name="question2" ngModel placeholder="Please answer Question 2">
+</div>
+<div class="bcenter">
+  <div class="btns">
+    <a class="btn btn1">Submit</a>
+</div></div>
+</form>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">A</button>
+    <button type="button" class="btn btn-danger">B</button>
+    <button type="button" class="btn btn-warning">C</button>
+    <button type="button" class="btn btn-success">D</button>
+  </div>
+  <div class="testingblock"></div>
+
+
+ -->

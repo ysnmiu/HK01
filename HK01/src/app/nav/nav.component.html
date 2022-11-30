@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg " id="nav-bar">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home" >Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/survey">Survey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" *ngIf="!this.auth.loggedIn">Login</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" *ngIf="this.auth.loggedIn" aria-expanded="false" >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/create">Create Survey</a></li>
+              <li><a class="dropdown-item" routerLink="/analysis">Survey Analysis</a></li>
+            </ul>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="/home" *ngIf="this.auth.loggedIn">Logout</a>
+          </li>
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
